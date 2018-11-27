@@ -6,7 +6,9 @@ __global__ void helloFromGPU() {
 
 int main(int argc, char**argv) {
   printf("Hello World from CPU!\n");
-  helloFromGPU<<<4, 6>>>();
+  int blocks = 1;
+  int threads = 1024;
+  helloFromGPU<<<blocks, threads>>>();
 
   cudaDeviceReset();
   return 0;
