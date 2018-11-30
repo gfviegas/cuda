@@ -6,6 +6,7 @@ __global__ void helloFromGPU() {
 
 int main(int argc, char**argv) {
   printf("Hello World from CPU!\n");
+
   int blocks = 1;
   int threads = 1024;
   helloFromGPU<<<blocks, threads>>>();

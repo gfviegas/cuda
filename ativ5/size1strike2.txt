@@ -1,0 +1,20 @@
+Tamanho dos vetores: 100000000, Strike: 2
+==3637== NVPROF is profiling process 3637, command: ./ex1.out
+==3637== Profiling application: ./ex1.out
+==3637== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   68.15%  530.36ms         2  265.18ms  265.01ms  265.35ms  [CUDA memcpy HtoD]
+                   30.91%  240.53ms         1  240.53ms  240.53ms  240.53ms  [CUDA memcpy DtoH]
+                    0.94%  7.3515ms         1  7.3515ms  7.3515ms  7.3515ms  sumArraysOnGpu(float*, float*, float*, int, int)
+      API calls:   89.66%  778.73ms         3  259.58ms  249.02ms  265.48ms  cudaMemcpy
+                    7.05%  61.263ms         3  20.421ms  616.36us  60.030ms  cudaMalloc
+                    3.03%  26.306ms         1  26.306ms  26.306ms  26.306ms  cudaDeviceReset
+                    0.15%  1.2652ms         3  421.74us  400.31us  463.36us  cudaFree
+                    0.09%  749.59us        96  7.8080us     298ns  323.80us  cuDeviceGetAttribute
+                    0.01%  120.31us         1  120.31us  120.31us  120.31us  cuDeviceGetName
+                    0.01%  97.052us         1  97.052us  97.052us  97.052us  cuDeviceTotalMem
+                    0.00%  33.919us         1  33.919us  33.919us  33.919us  cudaLaunchKernel
+                    0.00%  11.803us         2  5.9010us     400ns  11.403us  cuDeviceGet
+                    0.00%  3.4460us         3  1.1480us     322ns  1.7410us  cuDeviceGetCount
+                    0.00%  2.6190us         1  2.6190us  2.6190us  2.6190us  cuDeviceGetPCIBusId
+                    0.00%     434ns         1     434ns     434ns     434ns  cuDeviceGetUuid

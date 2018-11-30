@@ -22,7 +22,7 @@ int main(int argc, char**argv) {
   printf("Hello World from CPU!\n");
 
   long long int threads = 1024;
-  long long int blocks = 1024;
+  long long int blocks = 10;
   fibonacci<<<threads, blocks>>>(60);
 
   cudaDeviceSynchronize();

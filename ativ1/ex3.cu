@@ -8,9 +8,9 @@ __global__ void helloFromGPU() {
 int main(int argc, char**argv) {
   printf("Hello World from CPU!\n");
 
-  // Não tá funcionando colocar esse numero bem grande...
-  long long int blocks = 1024;
-  long long int threads = 2;
+  // 2 milhões blocos de 1024 threads
+  long long int blocks = 2 * 1e6;
+  long long int threads = 1024; // Numero maximo suportada pela GPU que rodamos
   helloFromGPU<<<blocks, threads>>>();
 
   cudaDeviceReset();
