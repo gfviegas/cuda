@@ -1,0 +1,276 @@
+grupo1@lescpcgpu:~/ativ3$ nvprof ./opsArray.out 25 512 5
+Quantidade de elementos: 8388608
+ Quantidade de MB: 32 MB, Quantidade de operações: 5
+
+==7388== NVPROF is profiling process 7388, command: ./opsArray.out 25 512 5
+==7388== Profiling application: ./opsArray.out 25 512 5
+==7388== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   68.76%  44.553ms         2  22.276ms  22.252ms  22.300ms  [CUDA memcpy HtoD]
+                   31.06%  20.125ms         1  20.125ms  20.125ms  20.125ms  [CUDA memcpy DtoH]
+                    0.18%  116.67us         1  116.67us  116.67us  116.67us  mathOperationsOnGPU(float*, float*, float*, int)
+      API calls:   43.20%  65.398ms         3  21.799ms  21.127ms  22.411ms  cudaMemcpy
+                   38.98%  59.007ms         3  19.669ms  207.47us  58.564ms  cudaMalloc
+                   16.86%  25.527ms         1  25.527ms  25.527ms  25.527ms  cudaDeviceReset
+                    0.46%  689.51us        96  7.1820us     296ns  308.60us  cuDeviceGetAttribute
+                    0.35%  529.85us         3  176.62us  153.47us  215.88us  cudaFree
+                    0.06%  91.930us         1  91.930us  91.930us  91.930us  cuDeviceGetName
+                    0.06%  91.701us         1  91.701us  91.701us  91.701us  cuDeviceTotalMem
+                    0.02%  32.748us         1  32.748us  32.748us  32.748us  cudaLaunchKernel
+                    0.00%  2.5120us         1  2.5120us  2.5120us  2.5120us  cuDeviceGetPCIBusId
+                    0.00%  2.3490us         3     783ns     359ns  1.6030us  cuDeviceGetCount
+                    0.00%  1.0870us         2     543ns     345ns     742ns  cuDeviceGet
+                    0.00%     410ns         1     410ns     410ns     410ns  cuDeviceGetUuid
+grupo1@lescpcgpu:~/ativ3$ nvprof ./opsArray.out 25 512 10
+Quantidade de elementos: 8388608
+ Quantidade de MB: 32 MB, Quantidade de operações: 10
+
+==7402== NVPROF is profiling process 7402, command: ./opsArray.out 25 512 10
+==7402== Profiling application: ./opsArray.out 25 512 10
+==7402== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   68.64%  44.531ms         2  22.266ms  22.230ms  22.301ms  [CUDA memcpy HtoD]
+                   31.08%  20.167ms         1  20.167ms  20.167ms  20.167ms  [CUDA memcpy DtoH]
+                    0.28%  181.98us         1  181.98us  181.98us  181.98us  mathOperationsOnGPU(float*, float*, float*, int)
+      API calls:   45.41%  65.490ms         3  21.830ms  21.192ms  22.335ms  cudaMemcpy
+                   36.04%  51.974ms         3  17.325ms  207.67us  51.523ms  cudaMalloc
+                   17.66%  25.466ms         1  25.466ms  25.466ms  25.466ms  cudaDeviceReset
+                    0.40%  577.26us        96  6.0130us     298ns  262.73us  cuDeviceGetAttribute
+                    0.36%  513.97us         3  171.32us  149.88us  202.52us  cudaFree
+                    0.05%  78.183us         1  78.183us  78.183us  78.183us  cuDeviceGetName
+                    0.05%  71.559us         1  71.559us  71.559us  71.559us  cuDeviceTotalMem
+                    0.02%  34.139us         1  34.139us  34.139us  34.139us  cudaLaunchKernel
+                    0.00%  2.5930us         1  2.5930us  2.5930us  2.5930us  cuDeviceGetPCIBusId
+                    0.00%  2.3130us         3     771ns     326ns  1.6280us  cuDeviceGetCount
+                    0.00%  1.0160us         2     508ns     308ns     708ns  cuDeviceGet
+                    0.00%     424ns         1     424ns     424ns     424ns  cuDeviceGetUuid
+grupo1@lescpcgpu:~/ativ3$ nvprof ./opsArray.out 25 512 15
+Quantidade de elementos: 8388608
+ Quantidade de MB: 32 MB, Quantidade de operações: 15
+
+==7414== NVPROF is profiling process 7414, command: ./opsArray.out 25 512 15
+==7414== Profiling application: ./opsArray.out 25 512 15
+==7414== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   68.58%  44.484ms         2  22.242ms  22.228ms  22.257ms  [CUDA memcpy HtoD]
+                   31.03%  20.126ms         1  20.126ms  20.126ms  20.126ms  [CUDA memcpy DtoH]
+                    0.39%  251.43us         1  251.43us  251.43us  251.43us  mathOperationsOnGPU(float*, float*, float*, int)
+      API calls:   44.89%  65.480ms         3  21.827ms  21.150ms  22.334ms  cudaMemcpy
+                   36.71%  53.548ms         3  17.849ms  210.20us  53.104ms  cudaMalloc
+                   17.51%  25.545ms         1  25.545ms  25.545ms  25.545ms  cudaDeviceReset
+                    0.40%  578.32us        96  6.0240us     295ns  263.62us  cuDeviceGetAttribute
+                    0.36%  520.88us         3  173.63us  147.90us  215.54us  cudaFree
+                    0.05%  78.751us         1  78.751us  78.751us  78.751us  cuDeviceGetName
+                    0.05%  71.125us         1  71.125us  71.125us  71.125us  cuDeviceTotalMem
+                    0.02%  32.842us         1  32.842us  32.842us  32.842us  cudaLaunchKernel
+                    0.00%  2.5630us         3     854ns     299ns  1.5850us  cuDeviceGetCount
+                    0.00%  2.4140us         1  2.4140us  2.4140us  2.4140us  cuDeviceGetPCIBusId
+                    0.00%     958ns         2     479ns     385ns     573ns  cuDeviceGet
+                    0.00%     418ns         1     418ns     418ns     418ns  cuDeviceGetUuid
+grupo1@lescpcgpu:~/ativ3$ nvprof ./opsArray.out 26 512 5
+Quantidade de elementos: 16777216
+ Quantidade de MB: 64 MB, Quantidade de operações: 5
+
+==7450== NVPROF is profiling process 7450, command: ./opsArray.out 26 512 5
+==7450== Profiling application: ./opsArray.out 26 512 5
+==7450== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   68.79%  88.985ms         2  44.493ms  44.479ms  44.506ms  [CUDA memcpy HtoD]
+                   31.13%  40.264ms         1  40.264ms  40.264ms  40.264ms  [CUDA memcpy DtoH]
+                    0.08%  107.04us         1  107.04us  107.04us  107.04us  mathOperationsOnGPU(float*, float*, float*, int)
+      API calls:   62.14%  129.97ms         3  43.323ms  41.977ms  44.613ms  cudaMemcpy
+                   24.92%  52.124ms         3  17.375ms  242.38us  51.592ms  cudaMalloc
+                   12.29%  25.701ms         1  25.701ms  25.701ms  25.701ms  cudaDeviceReset
+                    0.28%  585.32us         3  195.11us  169.34us  242.32us  cudaFree
+                    0.28%  578.00us        96  6.0200us     298ns  252.03us  cuDeviceGetAttribute
+                    0.04%  81.699us         1  81.699us  81.699us  81.699us  cuDeviceGetName
+                    0.04%  75.076us         1  75.076us  75.076us  75.076us  cuDeviceTotalMem
+                    0.02%  35.400us         1  35.400us  35.400us  35.400us  cudaLaunchKernel
+                    0.00%  2.5800us         3     860ns     348ns  1.8090us  cuDeviceGetCount
+                    0.00%  2.2850us         1  2.2850us  2.2850us  2.2850us  cuDeviceGetPCIBusId
+                    0.00%  1.0380us         2     519ns     331ns     707ns  cuDeviceGet
+                    0.00%     420ns         1     420ns     420ns     420ns  cuDeviceGetUuid
+grupo1@lescpcgpu:~/ativ3$ nvprof ./opsArray.out 26 512 10
+Quantidade de elementos: 16777216
+ Quantidade de MB: 64 MB, Quantidade de operações: 10
+
+==7462== NVPROF is profiling process 7462, command: ./opsArray.out 26 512 10
+^[[A==7462== Profiling application: ./opsArray.out 26 512 10
+==7462== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   68.75%  88.967ms         2  44.483ms  44.459ms  44.508ms  [CUDA memcpy HtoD]
+                   31.12%  40.267ms         1  40.267ms  40.267ms  40.267ms  [CUDA memcpy DtoH]
+                    0.13%  166.05us         1  166.05us  166.05us  166.05us  mathOperationsOnGPU(float*, float*, float*, int)
+      API calls:   62.25%  130.01ms         3  43.337ms  42.047ms  44.614ms  cudaMemcpy
+                   24.84%  51.867ms         3  17.289ms  249.14us  51.353ms  cudaMalloc
+                   12.27%  25.630ms         1  25.630ms  25.630ms  25.630ms  cudaDeviceReset
+                    0.28%  590.52us         3  196.84us  169.57us  241.23us  cudaFree
+                    0.26%  551.00us        96  5.7390us     300ns  247.10us  cuDeviceGetAttribute
+                    0.04%  78.042us         1  78.042us  78.042us  78.042us  cuDeviceGetName
+                    0.03%  71.089us         1  71.089us  71.089us  71.089us  cuDeviceTotalMem
+                    0.02%  33.763us         1  33.763us  33.763us  33.763us  cudaLaunchKernel
+                    0.00%  2.7950us         1  2.7950us  2.7950us  2.7950us  cuDeviceGetPCIBusId
+                    0.00%  2.3100us         3     770ns     293ns  1.5280us  cuDeviceGetCount
+                    0.00%     956ns         2     478ns     327ns     629ns  cuDeviceGet
+                    0.00%     409ns         1     409ns     409ns     409ns  cuDeviceGetUuid
+grupo1@lescpcgpu:~/ativ3$ nvprof ./opsArray.out 26 512 15
+Quantidade de elementos: 16777216
+ Quantidade de MB: 64 MB, Quantidade de operações: 15
+
+==7476== NVPROF is profiling process 7476, command: ./opsArray.out 26 512 15
+^[[A==7476== Profiling application: ./opsArray.out 26 512 15
+==7476== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   68.70%  89.003ms         2  44.502ms  44.461ms  44.542ms  [CUDA memcpy HtoD]
+                   31.12%  40.314ms         1  40.314ms  40.314ms  40.314ms  [CUDA memcpy DtoH]
+                    0.18%  229.41us         1  229.41us  229.41us  229.41us  mathOperationsOnGPU(float*, float*, float*, int)
+      API calls:   61.87%  130.17ms         3  43.391ms  42.172ms  44.567ms  cudaMemcpy
+                   24.79%  52.152ms         3  17.384ms  246.48us  51.631ms  cudaMalloc
+                   12.70%  26.727ms         1  26.727ms  26.727ms  26.727ms  cudaDeviceReset
+                    0.28%  583.15us         3  194.38us  172.77us  229.24us  cudaFree
+                    0.27%  560.64us        96  5.8390us     296ns  245.33us  cuDeviceGetAttribute
+                    0.04%  79.260us         1  79.260us  79.260us  79.260us  cuDeviceGetName
+                    0.03%  72.372us         1  72.372us  72.372us  72.372us  cuDeviceTotalMem
+                    0.02%  35.485us         1  35.485us  35.485us  35.485us  cudaLaunchKernel
+                    0.00%  2.4790us         3     826ns     321ns  1.6130us  cuDeviceGetCount
+                    0.00%  2.3630us         1  2.3630us  2.3630us  2.3630us  cuDeviceGetPCIBusId
+                    0.00%     921ns         2     460ns     325ns     596ns  cuDeviceGet
+                    0.00%     413ns         1     413ns     413ns     413ns  cuDeviceGetUuid
+grupo1@lescpcgpu:~/ativ3$ nvprof ./opsArray.out 27 512 5
+Quantidade de elementos: 33554432
+ Quantidade de MB: 128 MB, Quantidade de operações: 5
+
+^[[A==7488== NVPROF is profiling process 7488, command: ./opsArray.out 27 512 5
+==7488== Profiling application: ./opsArray.out 27 512 5
+==7488== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   68.80%  177.90ms         2  88.951ms  88.893ms  89.009ms  [CUDA memcpy HtoD]
+                   31.16%  80.575ms         1  80.575ms  80.575ms  80.575ms  [CUDA memcpy DtoH]
+                    0.04%  106.72us         1  106.72us  106.72us  106.72us  mathOperationsOnGPU(float*, float*, float*, int)
+      API calls:   76.53%  259.19ms         3  86.397ms  82.285ms  89.117ms  cudaMemcpy
+                   15.35%  52.001ms         3  17.334ms  340.62us  51.312ms  cudaMalloc
+                    7.68%  26.002ms         1  26.002ms  26.002ms  26.002ms  cudaDeviceReset
+                    0.21%  720.49us         3  240.16us  222.19us  274.73us  cudaFree
+                    0.16%  556.57us        96  5.7970us     296ns  239.74us  cuDeviceGetAttribute
+                    0.03%  85.691us         1  85.691us  85.691us  85.691us  cuDeviceTotalMem
+                    0.03%  85.161us         1  85.161us  85.161us  85.161us  cuDeviceGetName
+                    0.01%  33.881us         1  33.881us  33.881us  33.881us  cudaLaunchKernel
+                    0.00%  2.5610us         1  2.5610us  2.5610us  2.5610us  cuDeviceGetPCIBusId
+                    0.00%  2.4530us         3     817ns     375ns  1.6550us  cuDeviceGetCount
+                    0.00%  1.1530us         2     576ns     349ns     804ns  cuDeviceGet
+                    0.00%     424ns         1     424ns     424ns     424ns  cuDeviceGetUuid
+grupo1@lescpcgpu:~/ativ3$ nvprof ./opsArray.out 27 512 10
+Quantidade de elementos: 33554432
+ Quantidade de MB: 128 MB, Quantidade de operações: 10
+
+==7502== NVPROF is profiling process 7502, command: ./opsArray.out 27 512 10
+^[[A==7502== Profiling application: ./opsArray.out 27 512 10
+==7502== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   68.78%  177.92ms         2  88.958ms  88.946ms  88.969ms  [CUDA memcpy HtoD]
+                   31.15%  80.583ms         1  80.583ms  80.583ms  80.583ms  [CUDA memcpy DtoH]
+                    0.06%  165.92us         1  165.92us  165.92us  165.92us  mathOperationsOnGPU(float*, float*, float*, int)
+      API calls:   76.50%  259.27ms         3  86.423ms  82.359ms  89.051ms  cudaMemcpy
+                   15.45%  52.353ms         3  17.451ms  345.24us  51.646ms  cudaMalloc
+                    7.61%  25.798ms         1  25.798ms  25.798ms  25.798ms  cudaDeviceReset
+                    0.22%  733.42us         3  244.47us  219.45us  294.04us  cudaFree
+                    0.16%  549.49us        96  5.7230us     295ns  245.17us  cuDeviceGetAttribute
+                    0.02%  78.818us         1  78.818us  78.818us  78.818us  cuDeviceGetName
+                    0.02%  71.448us         1  71.448us  71.448us  71.448us  cuDeviceTotalMem
+                    0.01%  32.185us         1  32.185us  32.185us  32.185us  cudaLaunchKernel
+                    0.00%  2.6230us         3     874ns     514ns  1.5400us  cuDeviceGetCount
+                    0.00%  2.5350us         1  2.5350us  2.5350us  2.5350us  cuDeviceGetPCIBusId
+                    0.00%  1.0010us         2     500ns     330ns     671ns  cuDeviceGet
+                    0.00%     400ns         1     400ns     400ns     400ns  cuDeviceGetUuid
+grupo1@lescpcgpu:~/ativ3$ nvprof ./opsArray.out 27 512 15
+Quantidade de elementos: 33554432
+ Quantidade de MB: 128 MB, Quantidade de operações: 15
+
+==7514== NVPROF is profiling process 7514, command: ./opsArray.out 27 512 15
+==7514== Profiling application: ./opsArray.out 27 512 15
+==7514== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   68.84%  178.43ms         2  89.217ms  88.970ms  89.464ms  [CUDA memcpy HtoD]
+                   31.07%  80.542ms         1  80.542ms  80.542ms  80.542ms  [CUDA memcpy DtoH]
+                    0.09%  229.95us         1  229.95us  229.95us  229.95us  mathOperationsOnGPU(float*, float*, float*, int)
+      API calls:   76.48%  259.82ms         3  86.605ms  82.383ms  89.076ms  cudaMemcpy
+                   15.48%  52.584ms         3  17.528ms  340.79us  51.902ms  cudaMalloc
+                    7.58%  25.737ms         1  25.737ms  25.737ms  25.737ms  cudaDeviceReset
+                    0.24%  824.91us         3  274.97us  223.52us  314.25us  cudaFree
+                    0.16%  546.48us        96  5.6920us     300ns  243.79us  cuDeviceGetAttribute
+                    0.02%  83.827us         1  83.827us  83.827us  83.827us  cuDeviceTotalMem
+                    0.02%  81.402us         1  81.402us  81.402us  81.402us  cuDeviceGetName
+                    0.01%  32.770us         1  32.770us  32.770us  32.770us  cudaLaunchKernel
+                    0.00%  2.6840us         1  2.6840us  2.6840us  2.6840us  cuDeviceGetPCIBusId
+                    0.00%  2.4010us         3     800ns     348ns  1.5640us  cuDeviceGetCount
+                    0.00%  1.0650us         2     532ns     375ns     690ns  cuDeviceGet
+                    0.00%     410ns         1     410ns     410ns     410ns  cuDeviceGetUuid
+grupo1@lescpcgpu:~/ativ3$ nvprof ./opsArray.out 28 512 5
+^[[AQuantidade de elementos: 67108864
+ Quantidade de MB: 256 MB, Quantidade de operações: 5
+
+==7526== NVPROF is profiling process 7526, command: ./opsArray.out 28 512 5
+==7526== Profiling application: ./opsArray.out 28 512 5
+==7526== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   68.79%  355.80ms         2  177.90ms  177.89ms  177.91ms  [CUDA memcpy HtoD]
+                   31.19%  161.33ms         1  161.33ms  161.33ms  161.33ms  [CUDA memcpy DtoH]
+                    0.02%  107.17us         1  107.17us  107.17us  107.17us  mathOperationsOnGPU(float*, float*, float*, int)
+      API calls:   86.51%  517.83ms         3  172.61ms  163.06ms  177.98ms  cudaMemcpy
+                    8.81%  52.730ms         3  17.577ms  474.39us  51.777ms  cudaMalloc
+                    4.38%  26.208ms         1  26.208ms  26.208ms  26.208ms  cudaDeviceReset
+                    0.17%  1.0119ms         3  337.29us  309.82us  392.01us  cudaFree
+                    0.10%  587.64us        96  6.1210us     311ns  255.74us  cuDeviceGetAttribute
+                    0.01%  85.266us         1  85.266us  85.266us  85.266us  cuDeviceTotalMem
+                    0.01%  73.798us         1  73.798us  73.798us  73.798us  cuDeviceGetName
+                    0.01%  32.776us         1  32.776us  32.776us  32.776us  cudaLaunchKernel
+                    0.00%  2.4180us         1  2.4180us  2.4180us  2.4180us  cuDeviceGetPCIBusId
+                    0.00%  2.3950us         3     798ns     348ns  1.6390us  cuDeviceGetCount
+                    0.00%  1.1640us         2     582ns     393ns     771ns  cuDeviceGet
+                    0.00%     418ns         1     418ns     418ns     418ns  cuDeviceGetUuid
+grupo1@lescpcgpu:~/ativ3$ nvprof ./opsArray.out 28 512 10
+^[[AQuantidade de elementos: 67108864
+ Quantidade de MB: 256 MB, Quantidade de operações: 10
+
+==7551== NVPROF is profiling process 7551, command: ./opsArray.out 28 512 10
+==7551== Profiling application: ./opsArray.out 28 512 10
+==7551== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   68.80%  355.80ms         2  177.90ms  177.90ms  177.91ms  [CUDA memcpy HtoD]
+                   31.17%  161.20ms         1  161.20ms  161.20ms  161.20ms  [CUDA memcpy DtoH]
+                    0.03%  166.14us         1  166.14us  166.14us  166.14us  mathOperationsOnGPU(float*, float*, float*, int)
+      API calls:   86.66%  517.78ms         3  172.59ms  162.98ms  178.00ms  cudaMemcpy
+                    8.80%  52.601ms         3  17.534ms  475.88us  51.642ms  cudaMalloc
+                    4.24%  25.312ms         1  25.312ms  25.312ms  25.312ms  cudaDeviceReset
+                    0.17%  1.0137ms         3  337.89us  316.41us  379.45us  cudaFree
+                    0.09%  561.65us        96  5.8500us     302ns  235.96us  cuDeviceGetAttribute
+                    0.01%  83.857us         1  83.857us  83.857us  83.857us  cuDeviceGetName
+                    0.01%  76.690us         1  76.690us  76.690us  76.690us  cuDeviceTotalMem
+                    0.01%  33.446us         1  33.446us  33.446us  33.446us  cudaLaunchKernel
+                    0.00%  2.4110us         1  2.4110us  2.4110us  2.4110us  cuDeviceGetPCIBusId
+                    0.00%  2.3350us         3     778ns     346ns  1.5760us  cuDeviceGetCount
+                    0.00%  1.1720us         2     586ns     369ns     803ns  cuDeviceGet
+                    0.00%     419ns         1     419ns     419ns     419ns  cuDeviceGetUuid
+grupo1@lescpcgpu:~/ativ3$ nvprof ./opsArray.out 28 512 15
+Quantidade de elementos: 67108864
+ Quantidade de MB: 256 MB, Quantidade de operações: 15
+
+==7563== NVPROF is profiling process 7563, command: ./opsArray.out 28 512 15
+==7563== Profiling application: ./opsArray.out 28 512 15
+==7563== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   68.78%  355.74ms         2  177.87ms  177.81ms  177.92ms  [CUDA memcpy HtoD]
+                   31.18%  161.27ms         1  161.27ms  161.27ms  161.27ms  [CUDA memcpy DtoH]
+                    0.04%  230.75us         1  230.75us  230.75us  230.75us  mathOperationsOnGPU(float*, float*, float*, int)
+      API calls:   86.49%  517.85ms         3  172.62ms  163.12ms  177.92ms  cudaMemcpy
+                    8.80%  52.688ms         3  17.563ms  480.89us  51.722ms  cudaMalloc
+                    4.41%  26.416ms         1  26.416ms  26.416ms  26.416ms  cudaDeviceReset
+                    0.17%  997.14us         3  332.38us  305.76us  381.53us  cudaFree
+                    0.10%  570.66us        96  5.9440us     312ns  247.65us  cuDeviceGetAttribute
+                    0.01%  81.218us         1  81.218us  81.218us  81.218us  cuDeviceGetName
+                    0.01%  74.148us         1  74.148us  74.148us  74.148us  cuDeviceTotalMem
+                    0.01%  33.293us         1  33.293us  33.293us  33.293us  cudaLaunchKernel
+                    0.00%  2.9370us         1  2.9370us  2.9370us  2.9370us  cuDeviceGetPCIBusId
+                    0.00%  2.6080us         3     869ns     339ns  1.8710us  cuDeviceGetCount
+                    0.00%     901ns         2     450ns     318ns     583ns  cuDeviceGet
+                    0.00%     422ns         1     422ns     422ns     422ns  cuDeviceGetUuid

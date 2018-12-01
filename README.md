@@ -1,4 +1,8 @@
-Tem que elaborar os textos direito pra tudo...
+#Bibliografia
+https://helpmanual.io/help/nvprof/
+http://www.hds.bme.hu/~fhegedus/C++/Professional%20CUDA%20C%20Programming.pdf
+https://github.com/andersy005/cuda-programming/tree/master/cuda-c/src
+
 
 # Atividade 1:
 1. Modificar o ​​exemplo​ ​para ​​executar ​1​ ​bloco​​ com​​ 1024​​ threads.​​ Imprimir​​ e​​ verificar ​​a ordem​ ​de​ ​execução​ ​dos​ ​threads​.​ ​É​ ​sequencial​ ​?​ ​É​ ​determinística​ ​?​ ​É​ ​agrupada​ ​? (output0.txt)
