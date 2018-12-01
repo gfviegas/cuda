@@ -1,0 +1,24 @@
+digraph {
+	graph [fontname=Arial, nodesep=0.125, ranksep=0.25];
+	node [fontcolor=white, fontname=Arial, height=0, shape=box, style=filled, width=0];
+	edge [fontname=Arial];
+	285 [color="#ff0000", fontcolor="#ffffff", fontsize="10.00", label="std::abs(float)\n100.00%\n(100.00%)\n1024×"];
+	286 [color="#ff0000", fontcolor="#ffffff", fontsize="10.00", label="dim3::dim3(unsigned int, unsigned int, unsigned int)\n100.00%\n(100.00%)\n4×"];
+	287 [color="#ff0000", fontcolor="#ffffff", fontsize="10.00", label="cudaError cudaMalloc<float>(float**, unsigned long)\n100.00%\n(100.00%)\n3×"];
+	288 [color="#ff0000", fontcolor="#ffffff", fontsize="10.00", label="initialData(float*, int)\n100.00%\n(100.00%)\n2×"];
+	289 [color="#ff0000", fontcolor="#ffffff", fontsize="10.00", label="checkResult(float*, float*, int)\n100.00%\n(100.00%)\n1×"];
+	289 -> 285 [arrowsize="1.00", color="#ff0000", fontcolor="#ff0000", fontsize="10.00", label="100.00%\n1024×", labeldistance="4.00", penwidth="4.00"];
+	290 [color="#ff0000", fontcolor="#ffffff", fontsize="10.00", label="sumArraysOnCPU(float*, float*, float*, int)\n100.00%\n(100.00%)\n1×"];
+	291 [color="#ff0000", fontcolor="#ffffff", fontsize="10.00", label="sumArraysOnGpu(float*, float*, float*)\n100.00%\n(100.00%)\n1×"];
+	291 -> 293 [arrowsize="1.00", color="#ff0000", fontcolor="#ff0000", fontsize="10.00", label="100.00%\n1×", labeldistance="4.00", penwidth="4.00"];
+	292 [color="#ff0000", fontcolor="#ffffff", fontsize="10.00", label="cudaError cudaLaunchKernel<char>(char const*, dim3, dim3, void**, unsigned long, CUstream_st*)\n100.00%\n(100.00%)\n1×"];
+	293 [color="#ff0000", fontcolor="#ffffff", fontsize="10.00", label="__device_stub__Z14sumArraysOnGpuPfS_S_(float*, float*, float*)\n100.00%\n(100.00%)\n1×"];
+	293 -> 286 [arrowsize="1.00", color="#ff0000", fontcolor="#ff0000", fontsize="10.00", label="100.00%\n2×", labeldistance="4.00", penwidth="4.00"];
+	293 -> 292 [arrowsize="1.00", color="#ff0000", fontcolor="#ff0000", fontsize="10.00", label="100.00%\n1×", labeldistance="4.00", penwidth="4.00"];
+	294 [color="#ff0000", fontcolor="#ffffff", fontsize="10.00", label="____nv_dummy_param_ref(void*)\n100.00%\n(100.00%)\n1×"];
+	295 [color="#ff0000", fontcolor="#ffffff", fontsize="10.00", label="__sti____cudaRegisterAll()\n100.00%\n(100.00%)\n1×"];
+	295 -> 296 [arrowsize="1.00", color="#ff0000", fontcolor="#ff0000", fontsize="10.00", label="100.00%\n1×", labeldistance="4.00", penwidth="4.00"];
+	296 [color="#ff0000", fontcolor="#ffffff", fontsize="10.00", label="__nv_cudaEntityRegisterCallback(void**)\n100.00%\n(100.00%)\n1×"];
+	296 -> 297 [arrowsize="1.00", color="#ff0000", fontcolor="#ff0000", fontsize="10.00", label="100.00%\n1×", labeldistance="4.00", penwidth="4.00"];
+	297 [color="#ff0000", fontcolor="#ffffff", fontsize="10.00", label="__nv_save_fatbinhandle_for_managed_rt(void**)\n100.00%\n(100.00%)\n1×"];
+}

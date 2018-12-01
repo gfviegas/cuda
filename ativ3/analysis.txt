@@ -5,8 +5,19 @@ Each sample counts as 0.01 seconds.
 
   %   cumulative   self              self     total           
  time   seconds   seconds    calls  Ts/call  Ts/call  name    
+  0.00      0.00     0.00     1024     0.00     0.00  std::abs(float)
+  0.00      0.00     0.00        4     0.00     0.00  dim3::dim3(unsigned int, unsigned int, unsigned int)
+  0.00      0.00     0.00        3     0.00     0.00  cudaError cudaMalloc<float>(float**, unsigned long)
   0.00      0.00     0.00        2     0.00     0.00  initialData(float*, int)
-  0.00      0.00     0.00        1     0.00     0.00  sumArraysOnHost(float*, float*, float*, int)
+  0.00      0.00     0.00        1     0.00     0.00  checkResult(float*, float*, int)
+  0.00      0.00     0.00        1     0.00     0.00  sumArraysOnCPU(float*, float*, float*, int)
+  0.00      0.00     0.00        1     0.00     0.00  sumArraysOnGpu(float*, float*, float*)
+  0.00      0.00     0.00        1     0.00     0.00  cudaError cudaLaunchKernel<char>(char const*, dim3, dim3, void**, unsigned long, CUstream_st*)
+  0.00      0.00     0.00        1     0.00     0.00  __device_stub__Z14sumArraysOnGpuPfS_S_(float*, float*, float*)
+  0.00      0.00     0.00        1     0.00     0.00  ____nv_dummy_param_ref(void*)
+  0.00      0.00     0.00        1     0.00     0.00  __sti____cudaRegisterAll()
+  0.00      0.00     0.00        1     0.00     0.00  __nv_cudaEntityRegisterCallback(void**)
+  0.00      0.00     0.00        1     0.00     0.00  __nv_save_fatbinhandle_for_managed_rt(void**)
 
  %         the percentage of the total running time of the
 time       program used by this function.
@@ -47,11 +58,51 @@ notice and this notice are preserved.
 granularity: each sample hit covers 2 byte(s) no time propagated
 
 index % time    self  children    called     name
-                0.00    0.00       2/2           main [6]
-[8]      0.0    0.00    0.00       2         initialData(float*, int) [8]
+                0.00    0.00    1024/1024        checkResult(float*, float*, int) [289]
+[285]    0.0    0.00    0.00    1024         std::abs(float) [285]
 -----------------------------------------------
-                0.00    0.00       1/1           main [6]
-[9]      0.0    0.00    0.00       1         sumArraysOnHost(float*, float*, float*, int) [9]
+                0.00    0.00       2/4           main [283]
+                0.00    0.00       2/4           __device_stub__Z14sumArraysOnGpuPfS_S_(float*, float*, float*) [293]
+[286]    0.0    0.00    0.00       4         dim3::dim3(unsigned int, unsigned int, unsigned int) [286]
+-----------------------------------------------
+                0.00    0.00       3/3           main [283]
+[287]    0.0    0.00    0.00       3         cudaError cudaMalloc<float>(float**, unsigned long) [287]
+-----------------------------------------------
+                0.00    0.00       2/2           main [283]
+[288]    0.0    0.00    0.00       2         initialData(float*, int) [288]
+-----------------------------------------------
+                0.00    0.00       1/1           main [283]
+[289]    0.0    0.00    0.00       1         checkResult(float*, float*, int) [289]
+                0.00    0.00    1024/1024        std::abs(float) [285]
+-----------------------------------------------
+                0.00    0.00       1/1           main [283]
+[290]    0.0    0.00    0.00       1         sumArraysOnCPU(float*, float*, float*, int) [290]
+-----------------------------------------------
+                0.00    0.00       1/1           main [283]
+[291]    0.0    0.00    0.00       1         sumArraysOnGpu(float*, float*, float*) [291]
+                0.00    0.00       1/1           __device_stub__Z14sumArraysOnGpuPfS_S_(float*, float*, float*) [293]
+-----------------------------------------------
+                0.00    0.00       1/1           __device_stub__Z14sumArraysOnGpuPfS_S_(float*, float*, float*) [293]
+[292]    0.0    0.00    0.00       1         cudaError cudaLaunchKernel<char>(char const*, dim3, dim3, void**, unsigned long, CUstream_st*) [292]
+-----------------------------------------------
+                0.00    0.00       1/1           sumArraysOnGpu(float*, float*, float*) [291]
+[293]    0.0    0.00    0.00       1         __device_stub__Z14sumArraysOnGpuPfS_S_(float*, float*, float*) [293]
+                0.00    0.00       2/4           dim3::dim3(unsigned int, unsigned int, unsigned int) [286]
+                0.00    0.00       1/1           cudaError cudaLaunchKernel<char>(char const*, dim3, dim3, void**, unsigned long, CUstream_st*) [292]
+-----------------------------------------------
+                0.00    0.00       1/1           __cudaUnregisterBinaryUtil() [330]
+[294]    0.0    0.00    0.00       1         ____nv_dummy_param_ref(void*) [294]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [1351]
+[295]    0.0    0.00    0.00       1         __sti____cudaRegisterAll() [295]
+                0.00    0.00       1/1           __nv_cudaEntityRegisterCallback(void**) [296]
+-----------------------------------------------
+                0.00    0.00       1/1           __sti____cudaRegisterAll() [295]
+[296]    0.0    0.00    0.00       1         __nv_cudaEntityRegisterCallback(void**) [296]
+                0.00    0.00       1/1           __nv_save_fatbinhandle_for_managed_rt(void**) [297]
+-----------------------------------------------
+                0.00    0.00       1/1           __nv_cudaEntityRegisterCallback(void**) [296]
+[297]    0.0    0.00    0.00       1         __nv_save_fatbinhandle_for_managed_rt(void**) [297]
 -----------------------------------------------
 
  This table describes the call tree of the program, and was sorted by
@@ -144,4 +195,8 @@ notice and this notice are preserved.
 
 Index by function name
 
-   [8] initialData(float*, int) [9] sumArraysOnHost(float*, float*, float*, int)
+ [287] cudaError cudaMalloc<float>(float**, unsigned long) [292] cudaError cudaLaunchKernel<char>(char const*, dim3, dim3, void**, unsigned long, CUstream_st*) [297] __nv_save_fatbinhandle_for_managed_rt(void**)
+ [289] checkResult(float*, float*, int) [293] __device_stub__Z14sumArraysOnGpuPfS_S_(float*, float*, float*) [286] dim3::dim3(unsigned int, unsigned int, unsigned int)
+ [288] initialData(float*, int) [294] ____nv_dummy_param_ref(void*) [285] std::abs(float)
+ [290] sumArraysOnCPU(float*, float*, float*, int) [295] __sti____cudaRegisterAll()
+ [291] sumArraysOnGpu(float*, float*, float*) [296] __nv_cudaEntityRegisterCallback(void**)

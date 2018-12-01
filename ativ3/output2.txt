@@ -1,0 +1,92 @@
+grupo1@lescpcgpu:~/ativ3$ nvprof ./sumArrayFloat.out 25 512 4
+Quantidade de elementos: 8388608
+ Quantidade de MB: 32 MB
+
+==2778== NVPROF is profiling process 2778, command: ./sumArrayFloat.out 25 512 4
+==2778== Profiling application: ./sumArrayFloat.out 25 512 4
+==2778== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   68.19%  44.318ms         2  22.159ms  22.136ms  22.182ms  [CUDA memcpy HtoD]
+                   31.23%  20.294ms         1  20.294ms  20.294ms  20.294ms  [CUDA memcpy DtoH]
+                    0.58%  378.46us         1  378.46us  378.46us  378.46us  sumArraysOnGpu(float*, float*, float*, int)
+      API calls:   43.11%  65.605ms         3  21.868ms  21.098ms  22.269ms  cudaMemcpy
+                   38.99%  59.339ms         3  19.780ms  208.21us  58.900ms  cudaMalloc
+                   16.86%  25.662ms         1  25.662ms  25.662ms  25.662ms  cudaDeviceReset
+                    0.55%  834.85us        96  8.6960us     300ns  375.88us  cuDeviceGetAttribute
+                    0.34%  511.49us         3  170.50us  148.67us  205.20us  cudaFree
+                    0.07%  103.82us         1  103.82us  103.82us  103.82us  cuDeviceGetName
+                    0.06%  94.754us         1  94.754us  94.754us  94.754us  cuDeviceTotalMem
+                    0.02%  36.168us         1  36.168us  36.168us  36.168us  cudaLaunchKernel
+                    0.00%  2.7150us         3     905ns     309ns  1.6860us  cuDeviceGetCount
+                    0.00%  2.6380us         1  2.6380us  2.6380us  2.6380us  cuDeviceGetPCIBusId
+                    0.00%  1.1340us         2     567ns     364ns     770ns  cuDeviceGet
+                    0.00%     405ns         1     405ns     405ns     405ns  cuDeviceGetUuid
+grupo1@lescpcgpu:~/ativ3$ nvprof ./sumArrayFloat.out 26 512 4
+Quantidade de elementos: 16777216
+ Quantidade de MB: 64 MB
+
+==2792== NVPROF is profiling process 2792, command: ./sumArrayFloat.out 26 512 4
+^[[A==2792== Profiling application: ./sumArrayFloat.out 26 512 4
+==2792== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   68.36%  88.674ms         2  44.337ms  44.306ms  44.367ms  [CUDA memcpy HtoD]
+                   31.06%  40.291ms         1  40.291ms  40.291ms  40.291ms  [CUDA memcpy DtoH]
+                    0.58%  752.61us         1  752.61us  752.61us  752.61us  sumArraysOnGpu(float*, float*, float*, int)
+      API calls:   61.71%  130.32ms         3  43.439ms  42.643ms  44.411ms  cudaMemcpy
+                   25.72%  54.324ms         3  18.108ms  235.35us  53.819ms  cudaMalloc
+                   11.92%  25.166ms         1  25.166ms  25.166ms  25.166ms  cudaDeviceReset
+                    0.28%  585.88us         3  195.29us  173.19us  232.55us  cudaFree
+                    0.28%  581.12us        96  6.0530us     294ns  266.41us  cuDeviceGetAttribute
+                    0.04%  81.641us         1  81.641us  81.641us  81.641us  cuDeviceGetName
+                    0.03%  71.577us         1  71.577us  71.577us  71.577us  cuDeviceTotalMem
+                    0.02%  38.836us         1  38.836us  38.836us  38.836us  cudaLaunchKernel
+                    0.00%  2.5360us         1  2.5360us  2.5360us  2.5360us  cuDeviceGetPCIBusId
+                    0.00%  2.3300us         3     776ns     317ns  1.6490us  cuDeviceGetCount
+                    0.00%     882ns         2     441ns     306ns     576ns  cuDeviceGet
+                    0.00%     407ns         1     407ns     407ns     407ns  cuDeviceGetUuid
+grupo1@lescpcgpu:~/ativ3$ nvprof ./sumArrayFloat.out 27 512 4
+Quantidade de elementos: 33554432
+ Quantidade de MB: 128 MB
+
+==2804== NVPROF is profiling process 2804, command: ./sumArrayFloat.out 27 512 4
+^[[A==2804== Profiling application: ./sumArrayFloat.out 27 512 4
+==2804== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   68.37%  177.28ms         2  88.639ms  88.631ms  88.647ms  [CUDA memcpy HtoD]
+                   31.09%  80.623ms         1  80.623ms  80.623ms  80.623ms  [CUDA memcpy DtoH]
+                    0.53%  1.3822ms         1  1.3822ms  1.3822ms  1.3822ms  sumArraysOnGpu(float*, float*, float*, int)
+      API calls:   76.52%  259.89ms         3  86.630ms  83.607ms  88.738ms  cudaMemcpy
+                   15.43%  52.420ms         3  17.473ms  336.85us  51.734ms  cudaMalloc
+                    7.59%  25.763ms         1  25.763ms  25.763ms  25.763ms  cudaDeviceReset
+                    0.22%  735.30us         3  245.10us  221.52us  281.17us  cudaFree
+                    0.18%  613.74us        96  6.3930us     294ns  270.26us  cuDeviceGetAttribute
+                    0.02%  82.894us         1  82.894us  82.894us  82.894us  cuDeviceGetName
+                    0.02%  78.232us         1  78.232us  78.232us  78.232us  cuDeviceTotalMem
+                    0.01%  39.070us         1  39.070us  39.070us  39.070us  cudaLaunchKernel
+                    0.00%  2.5310us         3     843ns     333ns  1.7560us  cuDeviceGetCount
+                    0.00%  2.1880us         1  2.1880us  2.1880us  2.1880us  cuDeviceGetPCIBusId
+                    0.00%  1.1870us         2     593ns     364ns     823ns  cuDeviceGet
+                    0.00%     401ns         1     401ns     401ns     401ns  cuDeviceGetUuid
+grupo1@lescpcgpu:~/ativ3$ nvprof ./sumArrayFloat.out 28 512 4
+Quantidade de elementos: 67108864
+ Quantidade de MB: 256 MB
+
+==2816== NVPROF is profiling process 2816, command: ./sumArrayFloat.out 28 512 4
+==2816== Profiling application: ./sumArrayFloat.out 28 512 4
+==2816== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   68.35%  354.72ms         2  177.36ms  177.30ms  177.42ms  [CUDA memcpy HtoD]
+                   31.11%  161.47ms         1  161.47ms  161.47ms  161.47ms  [CUDA memcpy DtoH]
+                    0.53%  2.7592ms         1  2.7592ms  2.7592ms  2.7592ms  sumArraysOnGpu(float*, float*, float*, int)
+      API calls:   86.74%  519.55ms         3  173.18ms  165.83ms  177.53ms  cudaMemcpy
+                    8.72%  52.240ms         3  17.413ms  479.32us  51.280ms  cudaMalloc
+                    4.24%  25.378ms         1  25.378ms  25.378ms  25.378ms  cudaDeviceReset
+                    0.18%  1.0902ms         3  363.40us  309.03us  391.57us  cudaFree
+                    0.09%  546.25us        96  5.6900us     295ns  235.75us  cuDeviceGetAttribute
+                    0.01%  79.934us         1  79.934us  79.934us  79.934us  cuDeviceGetName
+                    0.01%  69.973us         1  69.973us  69.973us  69.973us  cuDeviceTotalMem
+                    0.01%  36.924us         1  36.924us  36.924us  36.924us  cudaLaunchKernel
+                    0.00%  2.4870us         3     829ns     324ns  1.4980us  cuDeviceGetCount
+                    0.00%  2.3420us         1  2.3420us  2.3420us  2.3420us  cuDeviceGetPCIBusId
+                    0.00%  1.3130us         2     656ns     361ns     952ns  cuDeviceGet
+                    0.00%     413ns         1     413ns     413ns     413ns  cuDeviceGetUuid

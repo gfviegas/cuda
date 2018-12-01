@@ -1,7 +1,0 @@
-digraph {
-	graph [fontname=Arial, nodesep=0.125, ranksep=0.25];
-	node [fontcolor=white, fontname=Arial, height=0, shape=box, style=filled, width=0];
-	edge [fontname=Arial];
-	8 [color="#ff0000", fontcolor="#ffffff", fontsize="10.00", label="initialData(float*, int)\n100.00%\n(100.00%)\n2×"];
-	9 [color="#ff0000", fontcolor="#ffffff", fontsize="10.00", label="sumArraysOnHost(float*, float*, float*, int)\n100.00%\n(100.00%)\n1×"];
-}

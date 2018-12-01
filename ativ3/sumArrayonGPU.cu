@@ -5,12 +5,16 @@
 #include <stdio.h>
 #include <cuda_runtime.h>
 
-__global__ void sumArraysOnDevice(float *A, float *B, float *C){
+__global__ void sumArraysOnGpu(float *A, float *B, float *C){
     int idx = threadIdx.x;
     C[idx] = A[idx] + B[idx];
-
 }
 
+void sumArraysOnCPU(float *A, float *B, float *C, const int N){
+  for (int idx=0; idx<N; idx++){
+    C[idx] = A[idx] + B[idx];
+  }
+}
 
 void initialData(float *ip, int size){
     // generate different seed for random number
@@ -22,28 +26,19 @@ void initialData(float *ip, int size){
     }
 }
 
-
-void sumArraysOnHost(float *A, float *B, float *C, const int N){
-    for (int idx=0; idx<N; idx++){
-        C[idx] = A[idx] + B[idx];
-    }
-}
-
-
-
 void checkResult(float *h_C, float *result, const int N){
-    double epsilon = 1.0E-8;
-    int match = 1;
-    for (int i = 0; i < N; i++){
-        if (abs(h_C[i] - result[i]) > epsilon){
-            match = 0;
-            printf("Arrays do not match!\n");
-            printf("host %5.2f gpu %5.2f at current %d\n",
-                   h_C[i], result[i], i);
-            break;
-        }
+  double epsilon = 1.0E-8;
+  int match = 1;
+  for (int i = 0; i < N; i++){
+    if (abs(h_C[i] - result[i]) > epsilon){
+      match = 0;
+      printf("Arrays do not match!\n");
+      printf("host %5.2f gpu %5.2f at current %d\n",
+      h_C[i], result[i], i);
+      break;
     }
-    if (match) printf("Arrays match. \n\n");
+  }
+  if (match) printf("Arrays match. \n\n");
 }
 
 
@@ -67,21 +62,16 @@ int main(int argc, char **argv){
 
     // Use cudaMemcpy to transfer the data from the host memory to the GPU global memory with the
     // parameter cudaMemcpyHostToDevice specifying the transfer direction.
-
     cudaMemcpy(d_A, h_A, nBytes, cudaMemcpyHostToDevice);
     cudaMemcpy(d_B, h_B, nBytes, cudaMemcpyHostToDevice);
 
-
-
-    cudaThreadSynchronize();
-    sumArraysOnDevice<<<1, nElem>>>(d_A, d_B, d_C);
-    sumArraysOnHost(h_A, h_B, result, nElem);
+    sumArraysOnGpu<<<1, nElem>>>(d_A, d_B, d_C);
+    sumArraysOnCPU(h_A, h_B, result, nElem);
 
     cudaMemcpy(h_C, d_C, nBytes, cudaMemcpyDeviceToHost);
 
     for (int i=0; i<10; i++){
-         printf("%f + %f = %f \n", h_A[i], h_B[i], h_C[i]);
-
+      printf("%f + %f = %f \n", h_A[i], h_B[i], h_C[i]);
     }
 
     checkResult(h_C, result, nElem);

@@ -1,0 +1,56 @@
+grupo1@lescpcgpu:~/ativ3$ nvprof -m gld_throughput,dram_read_transactions,cf_executed ./sumArrayFloat.out 25 512 2
+Quantidade de elementos: 8388608
+ Quantidade de MB: 32 MB
+
+          1                            gld_throughput                    Global Load Throughput  180.69GB/s  180.69GB/s  180.69GB/s
+          1                    dram_read_transactions           Device Memory Read Transactions     1064975     1064975     1064975
+          1                               cf_executed        Executed Control-Flow Instructions     1310720     1310720     1310720
+grupo1@lescpcgpu:~/ativ3$ nvprof -m gld_throughput,dram_read_transactions,cf_executed ./sumArrayFloat.out 25 512 4
+Quantidade de elementos: 8388608
+ Quantidade de MB: 32 MB
+
+          1                            gld_throughput                    Global Load Throughput  207.39GB/s  207.39GB/s  207.39GB/s
+          1                    dram_read_transactions           Device Memory Read Transactions      532511      532511      532511
+          1                               cf_executed        Executed Control-Flow Instructions      655360      655360      655360
+grupo1@lescpcgpu:~/ativ3$ nvprof -m gld_throughput,dram_read_transactions,cf_executed ./sumArrayFloat.out 26 512 2
+Quantidade de elementos: 16777216
+ Quantidade de MB: 64 MB
+
+          1                            gld_throughput                    Global Load Throughput  182.34GB/s  182.34GB/s  182.34GB/s
+          1                    dram_read_transactions           Device Memory Read Transactions     2129938     2129938     2129938
+          1                               cf_executed        Executed Control-Flow Instructions     2621440     2621440     2621440
+grupo1@lescpcgpu:~/ativ3$ nvprof -m gld_throughput,dram_read_transactions,cf_executed ./sumArrayFloat.out 26 512 4
+Quantidade de elementos: 16777216
+ Quantidade de MB: 64 MB
+
+          1                            gld_throughput                    Global Load Throughput  213.74GB/s  213.74GB/s  213.74GB/s
+          1                    dram_read_transactions           Device Memory Read Transactions     1194721     1194721     1194721
+          1                               cf_executed        Executed Control-Flow Instructions     1310720     1310720     1310720
+grupo1@lescpcgpu:~/ativ3$ nvprof -m gld_throughput,dram_read_transactions,cf_executed ./sumArrayFloat.out 27 512 2
+Quantidade de elementos: 33554432
+ Quantidade de MB: 128 MB
+
+          1                            gld_throughput                    Global Load Throughput  194.49GB/s  194.49GB/s  194.49GB/s
+          1                    dram_read_transactions           Device Memory Read Transactions     4259850     4259850     4259850
+          1                               cf_executed        Executed Control-Flow Instructions     5242880     5242880     5242880
+grupo1@lescpcgpu:~/ativ3$ nvprof -m gld_throughput,dram_read_transactions,cf_executed ./sumArrayFloat.out 27 512 4
+Quantidade de elementos: 33554432
+ Quantidade de MB: 128 MB
+
+          1                            gld_throughput                    Global Load Throughput  228.22GB/s  228.22GB/s  228.22GB/s
+          1                    dram_read_transactions           Device Memory Read Transactions     2130319     2130319     2130319
+          1                               cf_executed        Executed Control-Flow Instructions     2621440     2621440     2621440
+grupo1@lescpcgpu:~/ativ3$ nvprof -m gld_throughput,dram_read_transactions,cf_executed ./sumArrayFloat.out 28 512 2
+Quantidade de elementos: 67108864
+ Quantidade de MB: 256 MB
+
+          1                            gld_throughput                    Global Load Throughput  194.73GB/s  194.73GB/s  194.73GB/s
+          1                    dram_read_transactions           Device Memory Read Transactions     8649425     8649425     8649425
+          1                               cf_executed        Executed Control-Flow Instructions    10485760    10485760    10485760
+grupo1@lescpcgpu:~/ativ3$ nvprof -m gld_throughput,dram_read_transactions,cf_executed ./sumArrayFloat.out 28 512 4
+Quantidade de elementos: 67108864
+ Quantidade de MB: 256 MB
+
+          1                            gld_throughput                    Global Load Throughput  228.87GB/s  228.87GB/s  228.87GB/s
+          1                    dram_read_transactions           Device Memory Read Transactions     4389604     4389604     4389604
+          1                               cf_executed        Executed Control-Flow Instructions     5242880     5242880     5242880

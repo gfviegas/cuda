@@ -1,0 +1,1 @@
+Modifique o tamanho e veja o desempenho com nvprof. Qual o tempo de Transferência? Qual o tempo de execução? Qual a taxa de Transferência​? Modifique o​ tamanho do vetor, execute com três tamanhos 100 M elementos, 200M elementos e 300 M elementos.
