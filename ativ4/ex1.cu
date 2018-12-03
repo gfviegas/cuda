@@ -54,15 +54,13 @@ void sumArraysOnHost(float *A, float *B, float *C, const int N) {
 }
 
 __global__ void sumArraysOnGpu(float *A, float *B, float *C, int* I, int* R, int strike, const int N) {
-    __shared__ float smem[512];
+  int i = blockIdx.x * blockDim.x + threadIdx.x * strike;
 
-    // número de conflitos
-    int conflicts = 6;
-    int i = blockIdx.x * blockDim.x + threadIdx.x;
-    if (i < N) {
-        smem[threadIdx.x] += i;
-        C[i] = A[i] + B[i] + smem[(threadIdx.x * conflicts) % blockDim.x];
-    }
+  if (i < N) {
+    I[i] = R[i];
+    i = I[i];
+    C[i] = A[i] + B[i];
+  }
 }
 
 
